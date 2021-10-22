@@ -19,8 +19,15 @@ public class Main {
         // While there is another rover
         while(in.hasNextLine()) {
             // Create another rover and attach to the plateau
-            int xCoord = in.nextInt();
-            int yCoord = in.nextInt();
+            int xCoord, yCoord;
+            try {
+                xCoord = in.nextInt();
+                yCoord = in.nextInt();
+            } catch (Exception e) {
+                // Stop if next input is not a new rover
+                break;
+            }
+
             String direction = in.next();
             Rover currentRover = plateau.deployRover(
                     new Coordinate(xCoord, yCoord, CardinalDirections.valueOf(direction))
