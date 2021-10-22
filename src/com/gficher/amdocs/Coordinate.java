@@ -1,8 +1,8 @@
 package com.gficher.amdocs;
 
 public class Coordinate {
-    private int x = 0;
-    private int y = 0;
+    private int x;
+    private int y;
     private CardinalDirections direction = CardinalDirections.N;
 
     public int getX() {
@@ -21,7 +21,11 @@ public class Coordinate {
     Coordinate() {
         this.x = 0;
         this.y = 0;
-        this.direction = CardinalDirections.N;
+    }
+
+    Coordinate(int x, int y) {
+        this.x = 0;
+        this.y = 0;
     }
 
     Coordinate(int x, int y, CardinalDirections direction) {
@@ -55,6 +59,16 @@ public class Coordinate {
                 break;
         }
     }
+
+
+    public boolean hasSameCoordinate(Coordinate coord) {
+        return this.x == coord.x && this.y == coord.y;
+    }
+
+    public String getFormattedCoords() {
+        return this.x + " " + this.y + " " + this.direction;
+    }
+
 
     @Override
     public String toString() {
