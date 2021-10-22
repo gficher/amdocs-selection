@@ -69,6 +69,10 @@ public class Coordinate {
         return this.x + " " + this.y + " " + this.direction;
     }
 
+    public Coordinate getClone() {
+        return new Coordinate(this.x, this.y, this.direction);
+    }
+
 
     @Override
     public String toString() {
