@@ -8,6 +8,12 @@ public class Main {
 
         int xSize = in.nextInt();
         int ySize = in.nextInt();
+
+        // Check for valid plateau size
+        if (xSize < 0 || ySize < 0) {
+            System.err.println("Invalid plateau size.");
+        }
+
         Plateau plateau = new Plateau(xSize, ySize);
 
         // While there is another rover
