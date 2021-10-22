@@ -1,7 +1,7 @@
 package com.gficher.amdocs;
 
 public class Rover {
-    private Coordinate coord = null;
+    private Coordinate coord;
 
 
     Rover(Coordinate coord) {
@@ -22,8 +22,8 @@ public class Rover {
     }
 
 
-    public String getFormattedCoords() {
-        return this.coord.getX() + " " + this.coord.getY() + " " + this.coord.getDirection();
+    public Coordinate getCoordinate() {
+        return this.coord;
     }
 
 
