@@ -39,11 +39,11 @@ public class Plateau {
     public boolean isCoordWithinBounds(Coordinate coord) {
         // Check X coordinate
         if (coord.getX() < 0) return false;
-        if (coord.getX() >= this.xSize) return false;
+        if (coord.getX() > this.xSize) return false;
 
         // Check Y coordinate
         if (coord.getY() < 0) return false;
-        if (coord.getY() >= this.ySize) return false;
+        if (coord.getY() > this.ySize) return false;
 
         return true;
     }
