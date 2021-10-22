@@ -34,6 +34,20 @@ public class Main {
                         currentRover.rotateRight();
                         break;
                     case 'M':
+                        // Predict movement
+                        Coordinate coord = currentRover.getCoordinate().getClone();
+                        coord.moveForward();
+
+                        if (plateau.hasRoverInCoordinate(coord)) {
+                            // Crash detected
+                            System.err.println("Crash at " + coord.getFormattedCoords());
+                        }
+
+                        if (!plateau.isCoordWithinBounds(coord)) {
+                            // Rover is out of bounds
+                            System.err.println("Rover out of bounds " + coord.getFormattedCoords());
+                        }
+
                         currentRover.moveForward();
                         break;
                     default:
@@ -44,7 +58,7 @@ public class Main {
 
         // Display Output
         for (Rover rover : plateau.getRoverList()) {
-            System.out.println(rover.getFormattedCoords());
+            System.out.println(rover.getCoordinate().getFormattedCoords());
         }
     }
 }
